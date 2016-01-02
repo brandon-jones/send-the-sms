@@ -1,0 +1,22 @@
+.row#main-body
+  .col-md-offset-2.col-md-8
+    %form.form-horizontal{:action => "#{send_sms_path}", :method => "post", :role => "form", "data-toggle" => "validator"}
+      = tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token)
+      .form-group.has-feedback
+        .row-fluid
+          %label.control-label.col-md-3{:for => "phone_number"} Phone Number:
+          .col-md-9
+            %input#phone_number.form-control.input-md{:name => "phone_number", :placeholder => "Phone Number", :type => "numbers", :required => "", "data-minlength" => "10", "data-maxlength" => "10", "data-match-error" => "Should be a 10 digit phone number" }
+            %span.glyphicon.form-control-feedback{"aria-hidden" => "true"}
+            .help-block.with-errors
+      .form-group.has-feedback
+        .row-fluid
+          %label.control-label.col-md-3{:for => "message"} Message:
+          .col-md-9
+            %textarea#message.form-control.input-md{:name => "message", :placeholder => "message to send", :type => "textarea", :required => "", :rows => "10", "data-minlength" => "1", "data-match-error" => "Just put anything"}
+            %span.glyphicon.form-control-feedback{"aria-hidden" => "true"}
+            .help-block.with-errors
+      .form-group.has-feedback
+        .row-fluid
+          .col-md-offset-3.col-md-9
+            %input.btn.btn-primary.btn-md{:type => "submit", :value => "Submit"}
