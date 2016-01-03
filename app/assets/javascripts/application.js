@@ -13,3 +13,18 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(document).ready(function() {
+  removeFlashSection()
+});
+
+removeFlashSection = function(e) {
+  shrink = function() {
+    $('#flash-messages').slideToggle();
+    remove = function() {
+      return $('#flash-messages').remove();
+    }
+    setTimeout(remove, 500);
+  };
+  return setTimeout(shrink, 1500)
+};

@@ -25,6 +25,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'haml-rails', '~> 0.9.0'
 
+# send the text
+gem 'sms-easy', '~> 1.3', '>= 1.3.2'
+gem 'sendgrid', '~> 1.2'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -11,9 +11,21 @@
             .help-block.with-errors
       .form-group.has-feedback
         .row-fluid
+          %label.control-label.col-md-3{:for => "message"} Carrier:
+          .col-md-9
+            = select("phone", "carrier", carrier_collection, {include_blank: true, :required => ""}, class: "form-control")
+      .form-group.has-feedback
+        .row-fluid
+          %label.control-label.col-md-3{:for => "email-from"} Email From:
+          .col-md-9
+            %input#email-from.form-control.input-md{:name => "email-from", :placeholder => "Email Message is from", :type => "email", :required => "" }
+            %span.glyphicon.form-control-feedback{"aria-hidden" => "true"}
+            .help-block.with-errors
+      .form-group.has-feedback
+        .row-fluid
           %label.control-label.col-md-3{:for => "message"} Message:
           .col-md-9
-            %textarea#message.form-control.input-md{:name => "message", :placeholder => "message to send", :type => "textarea", :required => "", :rows => "10", "data-minlength" => "1", "data-match-error" => "Just put anything"}
+            %textarea#message.form-control.input-md{:name => "message", :placeholder => "Message to Send", :type => "textarea", :required => "", :rows => "10", "data-minlength" => "1", "data-match-error" => "Just put anything"}
             %span.glyphicon.form-control-feedback{"aria-hidden" => "true"}
             .help-block.with-errors
       .form-group.has-feedback
