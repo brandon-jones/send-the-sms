@@ -50,8 +50,8 @@ ActionMailer::Base.smtp_settings = {
   :port => 25,
   :domain => "mysite.com",
   :authentication => :plain,
-  :user_name => "",
-  :password => ""
+  :user_name => "<%= ENV['USER_NAME'] %>",
+  :password => "<%= ENV['USER_password'] %>"
 }
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
